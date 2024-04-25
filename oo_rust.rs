@@ -1,10 +1,10 @@
 //structs define the variables of our "Objects"
-struct Dog {
+pub struct Dog {
 
     //variables used to define instances of dog
     pub breed: String,      //pub keyword makes this a public variable (default is private)
-    pub lifespan: i32,
-    pub activity: String,
+    lifespan: i32,
+    activity: String,
 
 }
 
@@ -16,7 +16,7 @@ impl Dog {
     }
 
     fn get_breed(&self) -> String {
-        self.breed.clone()      //use clone so it can be reimplemented
+        self.breed.clone()
     }
     fn get_lifespan(&self) -> i32 {
         self.lifespan
@@ -28,10 +28,6 @@ impl Dog {
 }
 
 fn main() {
-    let golden: Dog = Dog::new(breed: "Golden Retriever".to_owned(), lifespan: 15, activity: "Highly Active".to_owned()); 
-    print_dog(golden);
-}
-
-fn print_dog<Dog>(good_boy: Dog) {
-    println!("Breed: {}\nLifespan: {} Years\nActivity: {}", good_boy.get_breed, good_boy.get_lifespan, good_boy.get_activity);
+    let goodboy = Dog::new("Golden Retriever".to_string(), 15, "Highly Active".to_string()); 
+    println!("Dog Breed: {}\nLifespan: {} years\nActivity Level: {}", goodboy.get_breed(), goodboy.get_lifespan(), goodboy.get_activity());
 }
