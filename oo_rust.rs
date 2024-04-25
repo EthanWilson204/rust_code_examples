@@ -26,3 +26,12 @@ impl Dog {
     }
 
 }
+
+fn main() {
+    let golden: Dog = Dog::new(breed: "Golden Retriever".to_owned(), lifespan: 15, activity: "Highly Active".to_owned()); 
+    print_dog(golden);
+}
+
+fn print_dog<Dog>(good_boy: Dog) {
+    println!("Breed: {}\nLifespan: {} Years\nActivity: {}", good_boy.get_breed, good_boy.get_lifespan, good_boy.get_activity);
+}
